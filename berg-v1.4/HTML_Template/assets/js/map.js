@@ -21,7 +21,7 @@ $(function(){
             panControl: false,
             zoomControl: true,
             mapTypeControl: false,
-            streetViewControl: false,
+            streetViewControl: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             scrollwheel: false,
             styles: style

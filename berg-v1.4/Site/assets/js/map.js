@@ -6,7 +6,7 @@ $(function(){
         // Set your google maps parameters
         var $latitude = 48.853245, // If you unable to find latitude and longitude of your address. Please visit http://www.latlong.net/convert-address-to-lat-long.html you can easily generate.
             $longitude = 2.405550,
-            $map_zoom = 16; // Zoom setting
+            $map_zoom = 6; // Zoom setting
 
         // Google map custom marker icon
         var $marker_url = 'assets/img/map-marker-icon.png';
@@ -18,10 +18,10 @@ $(function(){
         var map_options = {
             center: new google.maps.LatLng($latitude, $longitude),
             zoom: $map_zoom,
-            panControl: true,
-            zoomControl: true,
+            panControl: false,
+            zoomControl: false,
             mapTypeControl: false,
-            streetViewControl: true,
+            streetViewControl: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             scrollwheel: false,
             styles: style
