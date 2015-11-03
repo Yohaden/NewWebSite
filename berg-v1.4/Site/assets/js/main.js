@@ -48,6 +48,14 @@ $(function(){
             $('html, body').stop().animate({
                 scrollTop: $(href).offset().top - (offset - 1)
             }, 1500, 'easeInOutExpo');
+            
+            /*
+             * Automatically retract the navigation after clicking 
+             * on one of the menu items.
+             */
+            if(!$(this).parent().hasClass('dropdown')){
+                $('.berg-collapse').collapse('hide');
+            }
         });
     };
     
@@ -118,21 +126,9 @@ $(function(){
         e.stopPropagation();
     });
     
-    
+ 
     /*-------------------------------------------------------------------*/
-    /*  8. Automatically retract the navigation
-    /*  when users click on a page for mobile.
-    /*-------------------------------------------------------------------*/
-    document.body.addEventListener('touchmove', function(){
-        if (!$(this).is('.navbar-toggle') || !$(this).is('.navbar-collapse') ||
-            !$(this).is('.dropdown-toggle') || !$(this).is('.page-scroll > a')){
-            $('.berg-collapse').collapse('hide');
-        }
-    }, false);
-    
-    
-    /*-------------------------------------------------------------------*/
-    /*  9. Portfolio gallery. Requires jQuery Magnific Popup plugin.
+    /*  8. Portfolio gallery. Requires jQuery Magnific Popup plugin.
     /*-------------------------------------------------------------------*/
     if ($.fn.magnificPopup){
         $('.portfolio').magnificPopup({
@@ -158,27 +154,14 @@ $(function(){
     
     
     /*-------------------------------------------------------------------*/
-    /*  10. Column Chart (Section - My Strenghts)
+    /*  9. Column Chart (Section - My Strengths)
     /*-------------------------------------------------------------------*/
     var columnChart = function (){
         $('.column-chart').find('.item-progress').each(function(){
             var item = $(this);
             var newHeight = $(this).parent().height() * ($(this).data('percent') / 100);
             
-            // Only animate elements when using non-mobile devices    
-            if (jQuery.browser.mobile === false){
-                $('.column-chart').one('inview', function(isInView) {
-                    if (isInView){
-                        // Animate item
-                        item.animate({
-                            height: newHeight
-                        },1500);
-                    }
-                });
-            }
-            else{
-                item.css('height', newHeight);
-            }
+            item.css('height', newHeight);
         });
     };
     
@@ -189,7 +172,7 @@ $(function(){
     
     
     /*-------------------------------------------------------------------*/
-    /*  11. Section - My Resume
+    /*  10. Section - My Resume
     /*-------------------------------------------------------------------*/
     var resumeCollapse = function (){
         var ww = Math.max($(window).width(), window.innerWidth),
@@ -218,7 +201,7 @@ $(function(){
     
     
     /*-------------------------------------------------------------------*/
-    /*	12. References slider. Requires Flexslider plugin.
+    /*	11. References slider. Requires Flexslider plugin.
     /*-------------------------------------------------------------------*/
     $(window).smartload(function(){
         if ($.fn.flexslider){
@@ -250,7 +233,7 @@ $(function(){
     
     
     /*-------------------------------------------------------------------*/
-    /*  13. Circle Chart (Section - Skills & Expertise)
+    /*  12. Circle Chart (Section - Skills & Expertise)
     /*-------------------------------------------------------------------*/
     var circleChart = function (){
         $('.circle-chart').find('.item-progress').each(function(){
@@ -282,7 +265,7 @@ $(function(){
     
     
     /*-------------------------------------------------------------------*/
-    /*  14. Bar Chart (Section - Knowledge)
+    /*  13. Bar Chart (Section - Knowledge)
     /*-------------------------------------------------------------------*/
     var barChart = function (){
         $('.bar-chart').find('.item-progress').each(function(){
@@ -324,7 +307,7 @@ $(function(){
     
     
     /*-------------------------------------------------------------------*/
-    /*  15. Milestones counter.
+    /*  14. Milestones counter.
     /*-------------------------------------------------------------------*/
     var counter = function (){
         var number = $('.milestones').find('.number');

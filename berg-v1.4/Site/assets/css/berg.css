@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------
 /*  Theme Name  : BERG
 /*  Description : Creative Resume Template
-/*  Version     : 1.4
+/*  Version     : 1.5
 /*-----------------------------------------------------------------------
 
 1. GLOBAL STYLES (USED IN VARIOUS SECTION OF THE WEBSITE)
@@ -13,10 +13,9 @@
 2. COMPONENTS (ELEMENTS USED IN MANY SECTION)
         2.1. BUTTON
         2.2. DIVIDER
-        2.3. UPPERCASE
-        2.4. SELECT BOXES CUSTOM
-        2.5. RADIO BUTTON CUSTOM
-        2.6. CHECKBOX CUSTOM
+        2.3. SELECT BOXES CUSTOM
+        2.4. RADIO BUTTON CUSTOM
+        2.5. CHECKBOX CUSTOM
 
 3. PRELOADER
 
@@ -42,7 +41,7 @@
 
         6.3. SECTION - SERVICES
 
-        6.4. SECTION - STRENGHTS
+        6.4. SECTION - STRENGTHS
 
         6.5. SECTION - RESUME
 
@@ -208,15 +207,7 @@ span.divider.center {
 
 
 /*---------------------------------------------------------------------*/
-/*  2.3. UPPERCASE
-/*---------------------------------------------------------------------*/
-.uppercase {
-  text-transform: uppercase;
-}
-
-
-/*---------------------------------------------------------------------*/
-/*  2.4. SELECT BOXES CUSTOM
+/*  2.3. SELECT BOXES CUSTOM
 /*---------------------------------------------------------------------*/
 .select2-container--default .select2-selection--single.select2-container-custom {
   background-color: #0d0c0d;
@@ -275,7 +266,7 @@ span.divider.center {
 
 
 /*---------------------------------------------------------------------*/
-/*  2.5. RADIO BUTTON CUSTOM
+/*  2.4. RADIO BUTTON CUSTOM
 /*---------------------------------------------------------------------*/
 .form-group .radio {
   margin-bottom: 5px;
@@ -323,7 +314,7 @@ span.divider.center {
 
 
 /*---------------------------------------------------------------------*/
-/*  2.6. CHECKBOX CUSTOM
+/*  2.5. CHECKBOX CUSTOM
 /*---------------------------------------------------------------------*/
 .form-group .checkbox {
   margin-bottom: 5px;
@@ -479,14 +470,15 @@ header.hero .hero-body .hero-text h1 {
 
 @media (min-width: 768px) {
   header.hero .hero-body .hero-text h1 {
-    font-size: 78px;
+    font-size: 68px;
   }
 }
 
 header.hero .hero-body .hero-text h1.small {
+  color: #ffffff;
   font-size: 45px;
   font-weight: 400;
-  color: #ffffff;
+  letter-spacing: -1px;
 }
 
 @media (min-width: 600px) {
@@ -551,7 +543,7 @@ header.hero .hero-body .hero-text p {
 }
 
 header.hero .hero-body .hero-text .page-scroll {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 
@@ -807,6 +799,7 @@ header.hero.parallax-yes > .parallax > .bcg {
 
 .navbar.navbar-fixed-top .navbar-collapse {
   border: 0;
+  max-height: 500px; /* default 340px */
 }
 
 @media (max-width: 991px) {
@@ -850,6 +843,7 @@ header.hero.parallax-yes > .parallax > .bcg {
 .section .section-title {
   margin-bottom: 20px;
   font-size: 35px;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -1002,11 +996,14 @@ header.hero.parallax-yes > .parallax > .bcg {
     text-align: justify;
   }
 }
-
 @media (min-width: 992px) {
   #profile .profile-text {
     padding-top: 100px;
   }
+}
+
+#profile .profile-text h2 {
+  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
@@ -1051,6 +1048,7 @@ header.hero.parallax-yes > .parallax > .bcg {
 #profile .contact-details h4 {
   margin-bottom: 15px;
   font-size: 18px;
+  text-transform: uppercase;
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -1101,6 +1099,10 @@ header.hero.parallax-yes > .parallax > .bcg {
   position: relative;
 }
 
+#profile .pp-wrapper .profile-picture h4 {
+  text-transform: uppercase;
+}
+
 #profile .pp-wrapper .profile-picture.style-one {
   position: absolute;
   top: 0;
@@ -1145,6 +1147,7 @@ header.hero.parallax-yes > .parallax > .bcg {
 .portfolio .item {
   position: relative;
   padding: 0px;
+  max-width: 100%;
 }
 
 .portfolio .item > .project-wrapper {
@@ -1419,6 +1422,7 @@ button.mfp-arrow:active {
 
 .services .item > .inner-content > h4 {
   margin-top: 15px;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -1453,23 +1457,23 @@ button.mfp-arrow:active {
 
 
 /*---------------------------------------------------------------------*/
-/*  6.4. SECTION - STRENGHTS
+/*  6.4. SECTION - STRENGTHS
 /*---------------------------------------------------------------------*/
-#strenghts {
-  background-image: url('../images/bg-strenghts.jpg');
+#strengths {
+  background-image: url('../images/bg-strengths.jpg');
   background-position: center top;
 }
 
-#strenghts .section-wrapper > .section-content {
+#strengths .section-wrapper > .section-content {
   padding-bottom: 0px;
 }
 
-#strenghts.parallax-yes {
+#strengths.parallax-yes {
   background: none;
 }
 
-#strenghts.parallax-yes > .parallax > .bcg {
-  background-image: url('../images/bg-strenghts.jpg');
+#strengths.parallax-yes > .parallax > .bcg {
+  background-image: url('../images/bg-strengths.jpg');
 }
 
 .column-chart {
@@ -1653,6 +1657,7 @@ button.mfp-arrow:active {
   left: 50%;
   font-size: 14px;
   text-align: center;
+  text-transform: uppercase;
   letter-spacing: 2px;
   -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
@@ -2100,21 +2105,32 @@ button.mfp-arrow:active {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin-top: -40px;
-  margin-left: -20px;
-  background-color: #c80a48;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  margin-top: -60px;
+  margin-left: -30px;
+  background-color: #0;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 0px;
   box-shadow: 3px 3px 10px #0d0c0d;
+}
+.circle-chart .item > .icon-soft {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -55px;
+  margin-left: -35px;
 }
 
 .circle-chart .item > h4 {
   margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -2147,6 +2163,7 @@ button.mfp-arrow:active {
 
 .bar-chart > .item > h4 {
   margin-bottom: 18px;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -2161,7 +2178,7 @@ button.mfp-arrow:active {
   position: relative;
   width: 100%;
   height: 20px;
-  margin-top: 3px;
+  margin-top: 15px;
   border-radius: 2px;
   background-color: #a1a1a1;
 }
@@ -2659,7 +2676,7 @@ button.mfp-arrow:active {
 }
 
 /* Firefox 4 to 18 */
-#contact.contact-form .form-group .input-group :-moz-placeholder {
+#contact .contact-form .form-group .input-group :-moz-placeholder {
   color: #a1a1a1;
   opacity: 1;
 }
@@ -2703,15 +2720,15 @@ button.mfp-arrow:active {
   box-shadow: none;
 }
 
+
+/*---------------------------------------------------------------------*/
+/*  6.12.2. CONTACT DETAILS
+/*---------------------------------------------------------------------*/
 #contact .contact-details {
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
-
-/*---------------------------------------------------------------------*/
-/*  6.12.2. CONTACT DETAILS
-/*---------------------------------------------------------------------*/
 #contact .contact-details .speech-bubble {
   position: relative;
   width: 170px;
@@ -2731,6 +2748,7 @@ button.mfp-arrow:active {
   padding-top: 50px;
   font-size: 30px;
   font-weight: 700;
+  text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -2738,6 +2756,7 @@ button.mfp-arrow:active {
 #contact .contact-details h2 {
   margin-top: 20px;
   font-size: 40px;
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -2881,6 +2900,11 @@ footer.footer .page-scroll > a {
 footer.footer ul.social-icons {
   margin: 0;
   text-align: center;
+}
+
+footer.footer ul.social-icons > li {
+  padding-right: 7px;
+  padding-left: 7px;
 }
 
 footer.footer ul.social-icons > li:hover > .item img {
